@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<style>
+    .home-center {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-box {
+        width: 700px;
+        max-width: 90%;
+        text-align: center;
+        border: 1px solid #333;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-box h2 {
+        margin-bottom: 15px;
+    }
+
+    .home-box p {
+        margin-bottom: 20px;
+    }
+
+    .home-box a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 18px;
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        border-radius: 5px;
+    }
+
+    .home-box a:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="home-center">
+    <div class="home-box">
+        <h2>Welcome to Employee Payslip System</h2>
+        <p>Manage employee records and generate monthly payslips easily.</p>
+
+        <a href="/employees">View Employees</a>
+        <a href="/add_employee">Add Employee</a>
+        <a href="/generate_payslip">Generate Payslip</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .page-center {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-box {
+        width: 500px;
+        max-width: 90%;
+        background: white;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #999;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="page-center">
+    <div class="card-box">
+        <h2>Add Employee</h2>
+        <form method="POST">
+            <input type="text" name="emp_name" placeholder="Employee Name" required>
+            <input type="text" name="department" placeholder="Department" required>
+            <input type="text" name="designation" placeholder="Designation" required>
+            <input type="number" step="0.01" name="basic_salary" placeholder="Basic Salary" required>
+            <input type="number" step="0.01" name="hra" placeholder="HRA" required>
+            <input type="number" step="0.01" name="da" placeholder="DA" required>
+            <input type="number" step="0.01" name="bonus" placeholder="Bonus" required>
+            <input type="number" step="0.01" name="pf" placeholder="PF" required>
+            <input type="number" step="0.01" name="tax" placeholder="Tax" required>
+            <input type="number" step="0.01" name="other_deductions" placeholder="Other Deductions" required>
+            <button type="submit">Add Employee</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

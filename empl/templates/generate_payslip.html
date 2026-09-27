@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.page-center { min-height: 80vh; display: flex; justify-content: center; align-items: center; }
+.card-box { width: 500px; max-width: 90%; background: white; border: 1px solid #333;
+            border-radius: 10px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.card-box h2 { text-align: center; margin-bottom: 20px; }
+form { display: flex; flex-direction: column; }
+select, input { padding: 10px; margin-bottom: 15px; border: 1px solid #999; border-radius: 5px; }
+button { padding: 10px; border: none; background-color: #28a745; color: white;
+         border-radius: 5px; cursor: pointer; }
+button:hover { background-color: #1e7e34; }
+</style>
+
+<div class="page-center">
+  <div class="card-box">
+    <h2>Generate Payslip</h2>
+    <form method="POST">
+      <label>Select Employee:</label>
+      <select name="emp_id" required>
+        {% for emp in employees %}
+          <option value="{{ emp.emp_id }}">{{ emp.emp_name }} - {{ emp.department }}</option>
+        {% endfor %}
+      </select>
+
+      <label>Pay Month:</label>
+      <input type="text" name="pay_month" placeholder="July 2026" required>
+
+      <label>Total Working Days in Month:</label>
+      <input type="number" name="total_days" placeholder="e.g. 26" required>
+
+      <label>Leave Days Taken:</label>
+      <input type="number" name="leave_days" placeholder="e.g. 3" min="0" required>
+
+      <button type="submit">Generate Payslip</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
